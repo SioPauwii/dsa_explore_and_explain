@@ -1,3 +1,5 @@
+import time
+
 def floodFill(matrix, posX, posY, newColor, ogColor=None, filled=None):
 
     row, col = len(matrix), len(matrix[0])
@@ -14,6 +16,7 @@ def floodFill(matrix, posX, posY, newColor, ogColor=None, filled=None):
     matrix[posX][posY] = newColor
     filled.add((posX, posY))
 
+    time.sleep(.5)
     highlightIndex(matrix, filled)
 
     floodFill(matrix, posX + 1, posY, newColor, ogColor, filled)
@@ -24,6 +27,8 @@ def floodFill(matrix, posX, posY, newColor, ogColor=None, filled=None):
     floodFill(matrix, posX - 1, posY + 1, newColor, ogColor, filled)
     floodFill(matrix, posX - 1, posY - 1, newColor, ogColor, filled)
     floodFill(matrix, posX + 1, posY - 1, newColor, ogColor, filled)
+
+    
 
 
 
